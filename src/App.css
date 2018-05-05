@@ -1,28 +1,184 @@
+@import "styles/_typograghy.css";
+@import url("https://fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800&subset=hebrew");
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
 }
 
 .App-title {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.logo {
+    width: 120px;
+    height: 90px;
+    position: relative;
+    border-radius: 100%;
+    top: 10px;
+    background-image: url('./AppIcon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0 auto;
+
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 4000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 4000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 4000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.form-container, .error-container {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px 41px 25px;
+    margin: 12px;
+}
+
+.welcome-text {
+    color: #3e3e3e;
+}
+
+.welcome-text p:first-of-type {
+    font-size: 23px;
+}
+
+.canvas-wrapper {
+    position: relative;
+    border: 1px solid #979797;
+    max-width: 268px;
+    margin: 0 auto;
+}
+
+.signature-message {
+    position: absolute;
+    top: 0;
+    color: #454545;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.signature-pad {
+    height: 114px;
+}
+
+.signature-symbol {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.horizontal-line {
+    width: 70%;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.companies-images {
+    background-color: #979797;
+    height: 91px;
+}
+
+.golf-slogan-image {
+    background-color: darkgreen;
+    height: 110px;
+    margin-top: 15px;
+    width: 85%;
+}
+
+.ampersand-image {
+    background-color: #c6c6c6;
+    height: 150px;
+    margin-top: 40px;
+}
+
+.submit-button {
+    background-color: #3d3d3d;
+    color: #ffffff;
+    width: 100px;
+    border-radius: 7px;
+    padding: 8px 0;
+    font-size: 17px;
+}
+
+.client-number {
+    font-size: 15px;
+    color: #3e3e3e;
+}
+
+.success {
+    background-color: #ffffff;
+    padding: 0px 41px 25px;
+    border-radius: 22px;
+    margin: 10px;
+}
+
+.success-image {
+    background-color: darkseagreen;
+    height: 100px;
+}
+
+.success-text {
+    font-size: 22px;
+}
+
+.success-text ~ p {
+    font-size: 15px;
+}
+
+.input ~ label {
+    text-align: right;
+    color: #454545;
+    font-size: 13px;
 }

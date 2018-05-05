@@ -3,14 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "axios": "^0.17.1",
+    "basscss": "8.0.2",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.5",
+    "material-ui": "^0.20.0",
+    "muicss": "^0.9.35",
+    "qs": "^6.5.1",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
+    "react-material-ui-form-validator": "^1.0.5",
+    "react-scripts": "1.0.17",
+    "signature_pad": "^2.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "aws s3 sync build/ s3://${DOMAIN} --delete"
   }
 }

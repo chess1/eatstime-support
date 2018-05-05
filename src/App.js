@@ -1,22 +1,48 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./Header/Header";
+import "./App.css";
+import FormContainer from "./Form/Form";
+import Success from "./Success";
+import { Grid, Row, Col } from "react-bootstrap";
+
+const STEP = {
+    REGISTER: "register",
+    AUTH: "auth",
+    SUCCESS: "success"
+};
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
 
+    state = {
+        step: STEP.REGISTER,
+        customer: {},
+    };
+
+    render() {
+        const { step } = this.state;
+
+        return (
+            <Grid className="App">
+                <Row>
+                    <Col xs={12} sm={8} md={8} lg={8} xl={8} xsOffset={2} smOffset={2} mdOffset={2} lgOffset={2}
+                         xlOffset={2}>
+                        <Header/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} sm={8} md={8} lg={8} xl={8} xsOffset={2} smOffset={2} mdOffset={2} lgOffset={2}
+                         xlOffset={2}>
+                        {
+                            (step === STEP.REGISTER ?
+                             <FormContainer changeStep={() => this.setState({ step: STEP.SUCCESS })}/> :
+                             <Success/>)
+                        }
+                    </Col>
+                </Row>
+
+            </Grid>
+        );
+    }
+}
 
 export default App;
