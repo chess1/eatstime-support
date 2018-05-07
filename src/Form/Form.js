@@ -117,6 +117,7 @@ class FormContainer extends Component {
                     errorMessages={['This field is required !']}
                     name="feedback"
                     value={this.state.form.feedback}
+                    className="testClass"
                     multiLine={true}
                     rows={5}
                     inputStyle={{ textAlign: 'left', direction: 'ltr' }}
