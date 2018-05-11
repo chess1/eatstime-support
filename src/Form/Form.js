@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import { ValidatorForm } from "react-form-validator-core";
 import { TextValidator } from "react-material-ui-form-validator";
-//import axios from "axios";
+import axios from "axios";
 
 
 class FormContainer extends Component {
@@ -45,11 +45,11 @@ class FormContainer extends Component {
             //termsApproved: this.state.termsApproved,
         };
 
-
-        setTimeout(() => {
-            changeStep();
-            console.log(data);
-        }, 2000)
+        axios.post(`/eatstime/support`, data).then((res) => {
+            if (res.status == 200) {
+                changeStep();
+            }
+        });
 
     }
 
