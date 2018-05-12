@@ -1,0 +1,147 @@
+@import "styles/_typograghy.css";
+@import url("https://fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800&subset=hebrew");
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+div {
+    text-align: left;
+}
+
+.logo {
+    width: 120px;
+    height: 90px;
+    position: relative;
+    border-radius: 100%;
+    top: 10px;
+    background-image: url('AppIcon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0 auto;
+
+}
+
+.form-container, .error-container {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px 41px 25px;
+    margin: 12px;
+}
+
+.welcome-text {
+    color: #3e3e3e;
+    text-align: center;
+}
+
+.canvas-wrapper {
+    position: relative;
+    border: 1px solid #979797;
+    max-width: 268px;
+    margin: 0 auto;
+}
+
+.signature-message {
+    position: absolute;
+    top: 0;
+    color: #454545;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.signature-pad {
+    height: 114px;
+}
+
+.signature-symbol {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.horizontal-line {
+    width: 70%;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.companies-images {
+    background-color: #979797;
+    height: 91px;
+}
+
+.golf-slogan-image {
+    background-color: darkgreen;
+    height: 110px;
+    margin-top: 15px;
+    width: 85%;
+}
+
+.ampersand-image {
+    background-color: #c6c6c6;
+    height: 150px;
+    margin-top: 40px;
+}
+
+.submit-button {
+    background-color: #A7493B;
+    color: #ffffff;
+    width: 100px;
+    border-radius: 7px;
+    padding: 8px 0;
+    font-size: 17px;
+}
+
+.client-number {
+    font-size: 15px;
+    color: #3e3e3e;
+}
+
+.success {
+    background-color: #ffffff;
+    padding: 0px 41px 25px;
+    border-radius: 22px;
+    margin: 10px;
+}
+
+.success-image {
+    background-color: darkseagreen;
+    height: 100px;
+}
+
+.success-text {
+    font-size: 22px;
+}
+
+.success-text ~ p {
+    font-size: 15px;
+}
+
+.input ~ label {
+    text-align: right;
+    color: #454545;
+    font-size: 13px;
+}
