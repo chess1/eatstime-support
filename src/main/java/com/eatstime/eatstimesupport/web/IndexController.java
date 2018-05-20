@@ -68,7 +68,7 @@ public class IndexController {
 
 
         df.format(new Date());
-        String fileName = email.concat("_").concat(df.getCalendar().getTime().toString());
+        String fileName =  email.concat("_").concat(df.getCalendar().getTime().toString());
 
         // save in disk
         File targetFile = new File("src/main/resources/" + fileName);
