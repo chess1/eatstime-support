@@ -1,18 +1,22 @@
 package com.eatstime.eatstimesupport.web;
 
-import com.eatstime.eatstimesupport.domain.Course;
 import com.eatstime.eatstimesupport.domain.User;
-import com.eatstime.eatstimesupport.repositories.CourseRepository;
-import com.eatstime.eatstimesupport.repositories.UserRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,10 +25,14 @@ import java.util.List;
 @Controller
 public class IndexController {
 
+    private static final DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
     @Autowired
-    private CourseRepository courseRepository;
-    @Autowired
-    private UserRepository userRepository;
+    ObjectMapper objectMapper;
+
+//    @Autowired
+//    private CourseRepository courseRepository;
+//    @Autowired
+//    private UserRepository userRepository;
 
 
     /**
@@ -35,10 +43,6 @@ public class IndexController {
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String load(ModelMap modelMap) {
-
-        final List<Course> courses = courseRepository.findAll();
-        modelMap.put("theCourses", courses);
-
         return "index";
     }
 
@@ -55,17 +59,23 @@ public class IndexController {
             params = {"name", "email", "content"})
     public String index(@RequestParam String name,
                         @RequestParam String email,
-                        @RequestParam String content) {
+                        @RequestParam String content) throws IOException {
 
         if (!validate(name, email, content)) {
             // TODO : handle in UI ??
             return "error";
         }
 
-        /**
-         * store in persist layer
-         */
-        userRepository.save(new User(name, email, content));
+
+        df.format(new Date());
+        String fileName = email.concat("_").concat(df.getCalendar().getTime().toString());
+
+        // save in disk
+        File targetFile = new File("src/main/resources/" + fileName);
+        List<String> strings = new ArrayList<String>();
+        strings.add(objectMapper.writeValueAsString(new User(name, email, content)));
+        FileUtils.writeLines(targetFile, strings);
+
 
         /**
          * Return view
