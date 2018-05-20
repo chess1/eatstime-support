@@ -93,7 +93,7 @@ public class IndexController {
      */
     private boolean validate(String name, String email, String content) {
 
-        if (StringUtils.isBlank(name) ||
+        if (StringUtils.isBlank(name)    ||
                 StringUtils.isBlank(email) ||
                 StringUtils.isBlank(content)) {
 
