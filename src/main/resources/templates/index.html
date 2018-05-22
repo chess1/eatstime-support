@@ -182,7 +182,7 @@
                 formData = {
                     'name': document.querySelector('input[name="form-name"]').value,
                     'email': document.querySelector('input[name="form-email"]').value,
-                    'message': document.querySelector('textarea[name="form-message"]').value
+                    'content': document.querySelector('textarea[name="form-message"]').value
                 };
 
                 const self = this;
@@ -204,7 +204,7 @@
                         self.removeClass(document.getElementById('name-field'), 'has-error');
                     }
 
-                    if (data.message.length < 3) {
+                    if (!data.content || data.content == undefined) {
                         self.addClass(document.getElementById('message-field'), 'has-error');
                         valid = false;
                     }else {
