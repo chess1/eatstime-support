@@ -218,7 +218,7 @@
             }.bind(this), false);
         },
         feedback: function (data) {
-            if (!data.success) {
+            if (!data) {
                 if (data.errors.name) {
                     var name = document.querySelector('input[name="form-name"]').parentNode,
                         error;
